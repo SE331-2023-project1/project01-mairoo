@@ -1,19 +1,64 @@
 <script setup lang="ts">
 import StudentCard from '../components/StudentCard.vue'
 import type { StudentItem } from '@/type'
-import { ref } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 import StudentService from '@/services/StudentService'
+import type { AxiosResponse } from 'axios';
+import { useRouter } from 'vue-router'
 
 const studentList = ref<Array<StudentItem>>([])
+const totalEvent = ref<number>(0)
+const router = useRouter()
 
-StudentService.getStudent().then((response) => {
-  studentList.value = response.data
+const props = defineProps({
+  page: {
+    type: Number,
+    required: true
+  },
+  limit: {
+    type: Number,
+    required: true
+  }
 })
+
+watchEffect(() =>{
+
+  StudentService.getStudent(3, props.page)
+  .then((response: AxiosResponse<StudentItem[]>) => {
+    studentList.value = response.data
+    totalEvent.value = response.headers['x-total-count']
+  })
+  .catch(() => {
+    router.push({ name: 'NetworkError' })
+  })
+  
+})
+const hasNextPage = computed(() => {
+  const totalPages = Math.ceil(totalEvent.value / 3)
+  return props.page.valueOf() < totalPages
+})
+
 </script>
 
 <template>
   <main class="events">
     <StudentCard v-for="student in studentList" :key="student.id" :student="student"></StudentCard>
+    <RouterLink
+        :to="{ name: 'studentList', query: { page: page - 1 } }"
+        rel="prev"
+        v-if="page != 1"
+        class="text-left text-gray-700 no-underline"
+      >
+        Prev Page
+      </RouterLink>
+      <RouterLink
+        :to="{ name: 'studentList', query: { page: page + 1 } }"
+        rel="next"
+        v-if="hasNextPage"
+        class="text-right text-gray-700 no-underline"
+      >
+        Next Page
+      </RouterLink>
   </main>
 </template>
 
