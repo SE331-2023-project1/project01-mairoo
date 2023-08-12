@@ -1,0 +1,34 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "studentId": "SE-001",
+      "name": "Prayuth",
+      "surname": "The minister",
+      "gpa": 3.59,
+      "image": "https://firebasestorage.googleapis.com/v0/b/publicimage-41deb.appspot.com/o/tu.jpg?alt=media&token=171d65d0-8e8d-45d2-81db-021836316e02",
+      "penAmount": 15,
+      "description": "The great man ever!!!!"
+    },
+    {
+      "id": 2,
+      "studentId": "SE-002",
+      "name": "Cherprang ",
+      "surname": "BNK48",
+      "gpa": 4.01,
+      "image": "https://firebasestorage.googleapis.com/v0/b/publicimage-41deb.appspot.com/o/cherprang.png?alt=media&token=e6639e24-e84c-4246-ab0e-8b7977b57f4f",
+      "penAmount": 2,
+      "description": "Code for Thailand"
+    },
+    {
+      "id": 3,
+      "studentId": "SE-003",
+      "name": "Nobi",
+      "surname": "Nobita",
+      "gpa": 1.77,
+      "image": "https://firebasestorage.googleapis.com/v0/b/publicimage-41deb.appspot.com/o/Nobita.png?alt=media&token=5ac97e03-40c4-47b0-8ad9-f5b52410fe37",
+      "penAmount": 0,
+      "description": "Welcome to Olympic"
+    }
+  ]
+}
