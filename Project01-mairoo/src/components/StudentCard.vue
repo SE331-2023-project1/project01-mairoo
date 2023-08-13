@@ -11,7 +11,7 @@ const prop = defineProps({
 </script>
 
 <template>
-  <div class="event-class">
+  <div class="student-class">
     <div class="student-card">
       <span>{{ student?.name }} {{ student?.surname }}</span>
     </div>
@@ -20,6 +20,7 @@ const prop = defineProps({
 
 <style scoped>
 .student-card {
+  margin-right: 18px;
   padding: 20px;
   width: 250px;
   cursor: pointer;

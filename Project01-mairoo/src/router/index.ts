@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import StudentView from '../views/StudentView.vue'
+import AdminView from '../views/AdminView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,12 @@ const router = createRouter({
       path: '/student',
       name: 'studentList',
       component: StudentView,
+      props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
+    },
+    {
+      path: '/Admin',
+      name: 'AdminDashboard',
+      component: AdminView,
       props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
     }
   ]

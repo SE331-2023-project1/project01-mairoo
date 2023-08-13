@@ -1,16 +1,17 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-
-    <body>
-      <div class="body-view">
-        <h1>See The Student Info</h1>
-        <div>
-          <RouterLink to="/student"> HERE!! </RouterLink>
-        </div>
+  <body>
+    <div class="body-view">
+      <h1>Welcome Back!!</h1>
+      <div>
+        <RouterLink to="/admin"> HERE!! </RouterLink>
       </div>
-    </body>
-
+    </div>
+  </body>
 </template>
+
+
+<style>
+
+</style>

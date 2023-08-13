@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView} from 'vue-router'
-
-
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
@@ -11,8 +9,10 @@ import { RouterLink, RouterView} from 'vue-router'
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/student">Student</RouterLink>
     </nav>
-       <RouterView></RouterView>
   </header>
+  <body>
+    <RouterView></RouterView>
+  </body>
 </template>
 
 <style>
@@ -22,6 +22,8 @@ import { RouterLink, RouterView} from 'vue-router'
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
@@ -37,14 +39,6 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-h4 {
-  font-size: 20px;
-}
 
 @keyframes yellowfade {
   from {
