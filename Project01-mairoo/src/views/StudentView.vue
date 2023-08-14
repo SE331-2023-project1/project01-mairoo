@@ -41,35 +41,37 @@ const hasNextPage = computed(() => {
   <body>
     <div>
       <div class="card-direction">
-
-        <StudentCard v-for="student in studentList" :key="student.id" :student="student"></StudentCard>
+        <StudentCard
+          v-for="student in studentList"
+          :key="student.id"
+          :student="student"
+        ></StudentCard>
       </div>
-        <RouterLink
-      :to="{ name: 'studentList', query: { page: page - 1 } }"
-      rel="prev"
-      v-if="page != 1"
-      class="text-left text-gray-700 no-underline"
+      <RouterLink
+        :to="{ name: 'studentList', query: { page: page - 1 } }"
+        rel="prev"
+        v-if="page != 1"
+        class="text-left text-gray-700 no-underline"
       >
-      Prev Page
-    </RouterLink>
-    <RouterLink
-      :to="{ name: 'studentList', query: { page: page + 1 } }"
-      rel="next"
-      v-if="hasNextPage"
-      class="text-right text-gray-700 no-underline"
-    >
-      Next Page
-    </RouterLink>
-  </div>
+        Prev Page
+      </RouterLink>
+      <RouterLink
+        :to="{ name: 'studentList', query: { page: page + 1 } }"
+        rel="next"
+        v-if="hasNextPage"
+        class="text-right text-gray-700 no-underline"
+      >
+        Next Page
+      </RouterLink>
+    </div>
   </body>
 </template>
 
 <style scoped>
-
 body {
   margin-top: 50%;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
 .card-direction {

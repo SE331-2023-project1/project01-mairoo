@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import StudentView from '../views/StudentView.vue'
 import AdminView from '../views/AdminView.vue'
+import Nprogress from 'nprogress'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,4 +33,10 @@ const router = createRouter({
   ]
 })
 
+router.beforeEach(() => {
+  Nprogress.start()
+}),
+  router.afterEach(() => {
+    Nprogress.done()
+  })
 export default router

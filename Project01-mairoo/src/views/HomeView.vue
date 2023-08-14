@@ -11,7 +11,4 @@
   </body>
 </template>
 
-
-<style>
-
-</style>
+<style></style>

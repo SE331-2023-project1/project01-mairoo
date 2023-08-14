@@ -40,38 +40,38 @@ const hasNextPage = computed(() => {
 <template>
   <body>
     <div class="events">
-        <StudentCard v-for="student in studentList" :key="student.id" :student="student"></StudentCard>
+      <StudentCard
+        v-for="student in studentList"
+        :key="student.id"
+        :student="student"
+      ></StudentCard>
     </div>
     <div>
-    <RouterLink
-      :to="{ name: 'AdminDashboard', query: { page: page - 1 } }"
-      rel="prev"
-      v-if="page != 1"
-      class="text-left text-gray-700 no-underline"
-    >
-      Prev Page
-    </RouterLink>
-    <RouterLink
-      :to="{ name: 'AdminDashboard', query: { page: page + 1 } }"
-      rel="next"
-      v-if="hasNextPage"
-      class="text-right text-gray-700 no-underline"
-    >
-      Next Page
-    </RouterLink>
-  </div>
+      <RouterLink
+        :to="{ name: 'AdminDashboard', query: { page: page - 1 } }"
+        rel="prev"
+        v-if="page != 1"
+        class="text-left text-gray-700 no-underline"
+      >
+        Prev Page
+      </RouterLink>
+      <RouterLink
+        :to="{ name: 'AdminDashboard', query: { page: page + 1 } }"
+        rel="next"
+        v-if="hasNextPage"
+        class="text-right text-gray-700 no-underline"
+      >
+        Next Page
+      </RouterLink>
+    </div>
   </body>
-  
 </template>
 
 <style scoped>
-
-
 body {
-    margin-top: 50%;
-    display: flex;
-    flex-direction: column;
-
+  margin-top: 50%;
+  display: flex;
+  flex-direction: column;
 }
 .events {
   display: flex;
