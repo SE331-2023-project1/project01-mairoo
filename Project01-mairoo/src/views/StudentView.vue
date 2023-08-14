@@ -38,18 +38,20 @@ const hasNextPage = computed(() => {
 </script>
 
 <template>
-  <body>
-    <div>
-      <div class="card-direction">
-
-        <StudentCard v-for="student in studentList" :key="student.id" :student="student"></StudentCard>
-      </div>
-        <RouterLink
+  <div>
+    <div class="card">
+      <StudentCard
+        v-for="student in studentList"
+        :key="student.id"
+        :student="student"
+      ></StudentCard>
+    </div>
+    <RouterLink
       :to="{ name: 'studentList', query: { page: page - 1 } }"
       rel="prev"
       v-if="page != 1"
       class="text-left text-gray-700 no-underline"
-      >
+    >
       Prev Page
     </RouterLink>
     <RouterLink
@@ -61,20 +63,19 @@ const hasNextPage = computed(() => {
       Next Page
     </RouterLink>
   </div>
-  </body>
 </template>
 
 <style scoped>
-
 body {
   margin-top: 50%;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 }
 
-.card-direction {
+.card {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
 }
 </style>

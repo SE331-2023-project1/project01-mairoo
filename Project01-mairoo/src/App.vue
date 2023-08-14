@@ -33,12 +33,12 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  margin-right: 50px;
 }
 
 nav a.router-link-exact-active {
   color: #42b983;
 }
-
 
 @keyframes yellowfade {
   from {

@@ -38,45 +38,64 @@ const hasNextPage = computed(() => {
 </script>
 
 <template>
-  <body>
-    <div class="events">
-        <StudentCard v-for="student in studentList" :key="student.id" :student="student"></StudentCard>
+  <div class="main">
+    <div class="StudentList">
+      <div class="StudentList-navbar">
+        <RouterLink to="">Add data student</RouterLink>
+        <RouterLink to="/student"> View all>>>> </RouterLink>
+      </div>
+      <div class="events">
+        <StudentCard
+          v-for="student in studentList"
+          :key="student.id"
+          :student="student"
+        ></StudentCard>
+      </div>
+
+      <div>
+        <!-- <RouterLink
+          :to="{ name: 'AdminDashboard', query: { page: page - 1 } }"
+          rel="prev"
+          v-if="page != 1"
+          class="text-left text-gray-700 no-underline"
+        >
+        Prev Page
+        </RouterLink>
+        <RouterLink
+          :to="{ name: 'AdminDashboard', query: { page: page + 1 } }"
+          rel="next"
+          v-if="hasNextPage"
+          class="text-right text-gray-700 no-underline"
+        >
+          Next Page
+        </RouterLink> -->
+
+        <h4>We have {{ totalEvent }} students now</h4>
+      </div>
     </div>
-    <div>
-    <RouterLink
-      :to="{ name: 'AdminDashboard', query: { page: page - 1 } }"
-      rel="prev"
-      v-if="page != 1"
-      class="text-left text-gray-700 no-underline"
-    >
-      Prev Page
-    </RouterLink>
-    <RouterLink
-      :to="{ name: 'AdminDashboard', query: { page: page + 1 } }"
-      rel="next"
-      v-if="hasNextPage"
-      class="text-right text-gray-700 no-underline"
-    >
-      Next Page
-    </RouterLink>
+    <div class="AdviserView">
+      <h1>It should be show AdviserView here</h1>
+    </div>
   </div>
-  </body>
-  
 </template>
 
 <style scoped>
-
-
-body {
-    margin-top: 50%;
-    display: flex;
-    flex-direction: column;
-
+.main {
+  display: flex;
+  flex-direction: row;
 }
 .events {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   padding: auto;
+}
+
+.AdviserView {
+  margin-left: 50%;
+}
+
+.StudentList-navbar a {
+  margin-right: 20px;
 }
 </style>
