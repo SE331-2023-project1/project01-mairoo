@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import StudentView from '../views/StudentView.vue'
 import AdminView from '../views/AdminView.vue'
+import DoctorView from '../views/DoctorView.vue'
 import Nprogress from 'nprogress'
 
 const router = createRouter({
@@ -25,9 +26,15 @@ const router = createRouter({
       props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
     },
     {
-      path: '/Admin',
+      path: '/admin',
       name: 'AdminDashboard',
       component: AdminView,
+      props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
+    },
+    {
+      path: '/doctor',
+      name: 'DoctorDashboard',
+      component: DoctorView,
       props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
     }
   ]

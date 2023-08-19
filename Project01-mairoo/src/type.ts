@@ -6,3 +6,10 @@ export interface StudentItem {
   profileImage: string
   courseList: string
 }
+
+export interface PatientItem {
+  id: number
+  name: string
+  vaccinated: boolean
+  recommendation: string
+}

@@ -167,5 +167,37 @@
       "surname": "Jones",
       "profileImage": "https://example.com/profiles/teacher_eve.jpg"
     }
+  ],
+  "patients": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "vaccinated": true,
+      "recommendation": "Continue with regular check-ups."
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "vaccinated": false,
+      "recommendation": "Please consider getting vaccinated."
+    },
+    {
+      "id": 3,
+      "name": "Carol",
+      "vaccinated": true,
+      "recommendation": "Maintain a healthy lifestyle for overall well-being."
+    },
+    {
+      "id": 4,
+      "name": "David",
+      "vaccinated": false,
+      "recommendation": "Schedule a follow-up appointment for further assessment."
+    },
+    {
+      "id": 5,
+      "name": "Eve",
+      "vaccinated": true,
+      "recommendation": "Continue to stay active and hydrated."
+    }
   ]
 }
