@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, type Ref, type PropType } from 'vue'
-import type { PatientItem } from '@/type'
+import type { PatientItem, VaccineInjection } from '@/type'
 import PatientService from '@/services/PatientService'
 
 // const patient = ref< PatientItem | null > (null)
@@ -8,6 +8,10 @@ import PatientService from '@/services/PatientService'
 const props = defineProps({
   patient: {
     type: Object as PropType<PatientItem>,
+    require: true
+  },
+  vaccine: {
+    type: Object as PropType<VaccineInjection>,
     require: true
   }
 })
@@ -21,13 +25,45 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-if="patient">
-    <!-- <h1>{{ patient?.first_name }} {{ patient?.last_name }}</h1> -->
-    <p>{{ patient?.patient_history }}</p>
-    <p>{{ patient?.recommendation }}</p>
-    <!-- <RouterLink :to="{name: 'PatientRecommend', params: {id}}">
-            Recommend to patient
-        </RouterLink> -->
+  <div class="paper" v-if="patient">
+    <h1 class="patient-name">
+      Name: {{ patient?.first_name }} {{ patient?.last_name }}
+      <span class="blood-type">Blood type: {{ patient.blood_type }}</span>
+    </h1>
+    <p class="patient-hospital">
+      Hospital: {{ patient.hospital }}
+      <span> Congenital disease: {{ patient.congenital_disease }}</span>
+    </p>
+    <p>Vaccine : {{ patient.vaccinated }}</p>
+    <p>
+      Vaccine injection: {{ patient.vaccine_injections[0]?.vaccine_name }}
+      {{ patient.vaccine_injections[0].date }}
+    </p>
+    <p class="patient-history">History: {{ patient?.patient_history }}</p>
+    <p class="recommendation">Recommend from doctor: {{ patient?.recommendation }}</p>
   </div>
-  <div></div>
+  <div class="page-break"></div>
 </template>
+
+<style scoped>
+.paper {
+  width: 210mm; /* A4 width */
+  height: 297mm; /* A4 height */
+  padding: 20mm; /* Add padding to mimic paper margins */
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  margin: 0 auto; /* Center horizontally */
+  display: flex;
+  flex-direction: column;
+  color: black; /* Set the text color */
+}
+
+.patient-name {
+  margin-bottom: 10px;
+}
+
+.blood-type {
+  margin-left: 10px;
+  font-weight: normal;
+}
+</style>

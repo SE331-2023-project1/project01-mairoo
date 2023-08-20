@@ -19,11 +19,10 @@ PatientService.getPatientById(Number(props.id))
 
 <template>
   <div v-if="patient">
-    <h1>{{ patient.first_name }}</h1>
-
     <RouterView :patient="patient"></RouterView>
 
     <div id="nav">
+      <RouterLink :to="{ name: 'patient-detail', params: { id } }"> Details </RouterLink>
       <RouterLink :to="{ name: 'patient-recommend', params: { id } }">
         Recommend to patient
       </RouterLink>

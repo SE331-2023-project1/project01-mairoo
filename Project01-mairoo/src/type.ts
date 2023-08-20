@@ -7,6 +7,11 @@ export interface StudentItem {
   courseList: string
 }
 
+export interface VaccineInjection {
+  date: string
+  vaccine_name: string
+}
+
 export interface PatientItem {
   id: number
   first_name: string
@@ -17,4 +22,5 @@ export interface PatientItem {
   patient_history: string
   hospital: string
   congenital_disease: string
+  vaccine_injections: VaccineInjection[]
 }
