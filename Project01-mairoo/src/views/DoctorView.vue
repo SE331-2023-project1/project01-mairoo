@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import PatientCard from '@/components/PatientCard.vue'
 import PatientService from '@/services/PatientService'
-import { computed, ref, watchEffect} from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 import { useRouter, RouterLink } from 'vue-router'
 import type { PatientItem } from '@/type'
 import type { AxiosResponse } from 'axios'
@@ -36,7 +36,6 @@ const hasNextPage = computed(() => {
   const totalPages = Math.ceil(totalEvent.value / 3)
   return props.page.valueOf() < totalPages
 })
-
 </script>
 
 <template>

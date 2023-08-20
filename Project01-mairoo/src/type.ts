@@ -9,7 +9,12 @@ export interface StudentItem {
 
 export interface PatientItem {
   id: number
-  name: string
+  first_name: string
+  last_name: string
+  blood_type: string
   vaccinated: boolean
   recommendation: string
+  patient_history: string
+  hospital: string
+  congenital_disease: string
 }

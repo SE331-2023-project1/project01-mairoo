@@ -4,6 +4,9 @@ import AboutView from '../views/AboutView.vue'
 import StudentView from '../views/StudentView.vue'
 import AdminView from '../views/AdminView.vue'
 import DoctorView from '../views/DoctorView.vue'
+import PatientDetail from '@/views/patient/PatientDetailView.vue'
+import PatientReccomend from '@/views/patient/PatientRecommendView.vue'
+import PatientLayout from '@/views/patient/PatientLayoutView.vue'
 import Nprogress from 'nprogress'
 
 const router = createRouter({
@@ -36,6 +39,26 @@ const router = createRouter({
       name: 'DoctorDashboard',
       component: DoctorView,
       props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
+    },
+    {
+      path: '/patient/:id',
+      name: 'patient-layout',
+      component: PatientLayout,
+      props: true,
+      children: [
+        {
+          path: '',
+          name: 'patient-detail',
+          component: PatientDetail,
+          props: true
+        },
+        {
+          path: 'recommend',
+          name: 'patient-recommend',
+          component: PatientReccomend,
+          props: true
+        }
+      ]
     }
   ]
 })

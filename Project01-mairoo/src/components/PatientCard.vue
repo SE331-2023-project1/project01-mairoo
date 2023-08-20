@@ -11,21 +11,22 @@ const prop = defineProps({
 </script>
 
 <template>
-  <div class="patient">
-    <div class="patient-card">
-      <h1>
-        {{ patient?.name }}
-      </h1>
-      <h2>vaccinated status: <span>
-          {{ patient?.vaccinated }}
-    </span>
-</h2>
-
-      <h5>
-        {{ patient?.recommendation }}
-      </h5>
+  <RouterLink :to="{ name: 'patient-detail', params: { id: patient?.id } }">
+    <div class="patient">
+      <div class="patient-card">
+        <h1>{{ patient?.first_name }} {{ patient?.last_name }}</h1>
+        <h2>
+          vaccinated status:
+          <span>
+            {{ patient?.vaccinated }}
+          </span>
+        </h2>
+        <h5>
+          {{ patient?.recommendation }}
+        </h5>
+      </div>
     </div>
-  </div>
+  </RouterLink>
 </template>
 
 <style scoped>
@@ -44,13 +45,12 @@ const prop = defineProps({
 }
 
 .patient-card span {
-    color: red;
-    text-decoration:double
+  color: red;
+  text-decoration: double;
 }
 
 .patient-card h1 {
-    color: blue;
-    text-decoration:double
+  color: blue;
+  text-decoration: double;
 }
-
 </style>

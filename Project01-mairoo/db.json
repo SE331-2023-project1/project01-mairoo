@@ -171,33 +171,58 @@
   "patients": [
     {
       "id": 1,
-      "name": "Alice",
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "blood_type": "A+",
       "vaccinated": true,
-      "recommendation": "Continue with regular check-ups."
+      "recommendation": "Continue with regular check-ups.",
+      "patient_history": "No major health issues in the past.",
+      "hospital": "City General Hospital",
+      "congenital_disease": "None"
     },
     {
       "id": 2,
-      "name": "Bob",
+      "first_name": "Bob",
+      "last_name": "Smith",
+      "blood_type": "O-",
       "vaccinated": false,
-      "recommendation": "Please consider getting vaccinated."
+      "recommendation": "Please consider getting vaccinated.",
+      "patient_history": "Allergic to penicillin.",
+      "hospital": "Central Medical Center",
+      "congenital_disease": "None"
     },
     {
       "id": 3,
-      "name": "Carol",
+      "first_name": "Carol",
+      "last_name": "Williams",
+      "blood_type": "B+",
       "vaccinated": true,
-      "recommendation": "Maintain a healthy lifestyle for overall well-being."
+      "recommendation": "Maintain a healthy lifestyle for overall well-being.",
+      "patient_history": "Had appendectomy in 2010.",
+      "hospital": "Green Valley Hospital",
+      "congenital_disease": "None"
     },
     {
       "id": 4,
-      "name": "David",
+      "first_name": "David",
+      "last_name": "Brown",
+      "blood_type": "AB-",
       "vaccinated": false,
-      "recommendation": "Schedule a follow-up appointment for further assessment."
+      "recommendation": "Schedule a follow-up appointment for further assessment.",
+      "patient_history": "Diagnosed with asthma.",
+      "hospital": "Westside Medical Center",
+      "congenital_disease": "None"
     },
     {
       "id": 5,
-      "name": "Eve",
+      "first_name": "Eve",
+      "last_name": "Jones",
+      "blood_type": "O+",
       "vaccinated": true,
-      "recommendation": "Continue to stay active and hydrated."
+      "recommendation": "Continue to stay active and hydrated.",
+      "patient_history": "Fractured right arm in 2018.",
+      "hospital": "Sunshine General Hospital",
+      "congenital_disease": "None"
     }
-  ]
+  ]  
 }
