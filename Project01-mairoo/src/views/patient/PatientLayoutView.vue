@@ -2,11 +2,13 @@
 import { ref } from 'vue'
 import type { PatientItem } from '@/type'
 import PatientService from '@/services/PatientService'
+import { useRouter } from 'vue-router'
 
 const patient = ref<PatientItem | null>(null)
 const props = defineProps({
   id: String
 })
+const router = useRouter()
 
 PatientService.getPatientById(Number(props.id))
   .then((res) => {
@@ -14,6 +16,11 @@ PatientService.getPatientById(Number(props.id))
   })
   .catch((error) => {
     console.log(error)
+    if (error.response && error.response.status === 404) {
+      router.push({ name: '404-resource', params: { resource: ' patient ' } })
+    } else {
+      router.push({ name: 'network-error' })
+    }
   })
 </script>
 

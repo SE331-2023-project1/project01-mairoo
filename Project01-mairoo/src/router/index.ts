@@ -7,6 +7,8 @@ import DoctorView from '../views/DoctorView.vue'
 import PatientDetail from '@/views/patient/PatientDetailView.vue'
 import PatientReccomend from '@/views/patient/PatientRecommendView.vue'
 import PatientLayout from '@/views/patient/PatientLayoutView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'
+import NetworkErrorView from '@/views/NetworkErrorView.vue'
 import Nprogress from 'nprogress'
 
 const router = createRouter({
@@ -59,6 +61,22 @@ const router = createRouter({
           props: true
         }
       ]
+    },
+    {
+      path: '/404/:resource',
+      name: '404-resource',
+      component: NotFoundView,
+      props: true
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'not-found',
+      component: NotFoundView
+    },
+    {
+      path: '/network-error',
+      name: 'network-error',
+      component: NetworkErrorView
     }
   ]
 })
