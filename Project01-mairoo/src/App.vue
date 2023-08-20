@@ -49,7 +49,7 @@ nav a.router-link-exact-active {
   }
 }
 
-#flashMessage {
+#flash {
   animation: yellowfade 3s ease-in-out;
 }
 </style>

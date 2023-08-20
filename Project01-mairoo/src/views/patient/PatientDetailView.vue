@@ -2,7 +2,11 @@
 import { ref, type Ref, type PropType } from 'vue'
 import type { PatientItem, VaccineInjection } from '@/type'
 import PatientService from '@/services/PatientService'
+import { useDetailStore } from '@/stores/detail'
+import { storeToRefs } from 'pinia'
 
+const store = useDetailStore()
+const { detail } = storeToRefs(store)
 // const patient = ref< PatientItem | null > (null)
 
 const props = defineProps({
@@ -41,6 +45,9 @@ const props = defineProps({
     </p>
     <p class="patient-history">History: {{ patient?.patient_history }}</p>
     <p class="recommendation">Recommend from doctor: {{ patient?.recommendation }}</p>
+    <div id="flash" v-if="detail">
+      <h4>{{ detail }}</h4>
+    </div>
   </div>
   <div class="page-break"></div>
 </template>
