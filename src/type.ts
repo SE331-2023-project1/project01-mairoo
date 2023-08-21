@@ -24,3 +24,10 @@ export interface PatientItem {
   congenital_disease: string
   vaccine_injections: VaccineInjection[]
 }
+
+export interface TeacherItem {
+  id: number
+  name: string
+  surname: string
+  profileImage: string
+}

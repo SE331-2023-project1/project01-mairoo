@@ -9,6 +9,7 @@ import PatientReccomend from '@/views/patient/PatientRecommendView.vue'
 import PatientLayout from '@/views/patient/PatientLayoutView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import NetworkErrorView from '@/views/NetworkErrorView.vue'
+import TeacherView from '../views/TeacherView.vue'
 import Nprogress from 'nprogress'
 
 const router = createRouter({
@@ -24,6 +25,13 @@ const router = createRouter({
       name: 'about',
       component: AboutView
     },
+    {
+      path: '/teacher',
+      name: 'teacher',
+      component: TeacherView,
+      props : true
+    },
+ 
     {
       path: '/student',
       name: 'studentList',
