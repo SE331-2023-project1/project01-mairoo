@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import StudentCard from '../components/StudentCard.vue'
 import type { StudentItem } from '@/type'
-import { computed, ref, watchEffect } from 'vue'
+import { computed, ref, watchEffect, type Ref } from 'vue'
 import StudentService from '@/services/StudentService'
 import type { AxiosResponse } from 'axios'
 import { useRouter } from 'vue-router'
+import type { TeacherItem } from '@/type'
+import TeacherCard from '@/components/TeacherCard.vue';
+import TeacherService from '@/services/TeacherService'
+
 
 const studentList = ref<Array<StudentItem>>([])
 const totalEvent = ref<number>(0)
@@ -35,6 +39,13 @@ const hasNextPage = computed(() => {
   const totalPages = Math.ceil(totalEvent.value / 3)
   return props.page.valueOf() < totalPages
 })
+
+TeacherService.getEvent()
+  .then((response) => {
+    events.value = response.data
+  })
+const events: Ref<Array<TeacherItem>> = ref([])
+
 </script>
 
 <template>
@@ -45,11 +56,7 @@ const hasNextPage = computed(() => {
         <RouterLink to="/student"> View all>>>> </RouterLink>
       </div>
       <div class="events">
-        <StudentCard
-          v-for="student in studentList"
-          :key="student.id"
-          :student="student"
-        ></StudentCard>
+        <StudentCard v-for="student in studentList" :key="student.id" :student="student"></StudentCard>
       </div>
 
       <div>
@@ -74,7 +81,10 @@ const hasNextPage = computed(() => {
       </div>
     </div>
     <div class="AdviserView">
-      <h1>It should be show AdviserView here</h1>
+      <div class="card">
+        <TeacherCard v-for="teacher in events" :key="teacher.id" :teacher="teacher">
+        </TeacherCard>
+      </div>
     </div>
   </div>
 </template>
@@ -84,6 +94,7 @@ const hasNextPage = computed(() => {
   display: flex;
   flex-direction: row;
 }
+
 .events {
   display: flex;
   flex-direction: column;
