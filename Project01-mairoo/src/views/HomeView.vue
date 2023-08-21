@@ -1,9 +1,18 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="admin-side">
+    <h1>ADMIN</h1>
+    <div>
+      <RouterLink to="/admin"> HERE!! </RouterLink>
+    </div>
+  </div>
+  <div class="doctor-side">
+    <h1>DOCTOR</h1>
+    <div>
+      <RouterLink to="/doctor"> HERE!!</RouterLink>
+    </div>
+  </div>
 </template>
+
+<style></style>

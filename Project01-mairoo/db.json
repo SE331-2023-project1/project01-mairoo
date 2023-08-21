@@ -1,214 +1,256 @@
 {
   "students": [
     {
+      "id": 1,
       "name": "John",
       "surname": "Doe",
       "studentID": "S001",
       "profileImage": "https://example.com/profiles/john_doe.jpg",
-      "courseList": ["Mathematics", "Physics"]
+      "courseList": ["Mathematics", "Physics"],
+      "teacherId": 1
     },
     {
+      "id": 2,
       "name": "Jane",
       "surname": "Smith",
       "studentID": "S002",
       "profileImage": "https://example.com/profiles/jane_smith.jpg",
-      "courseList": ["History", "Literature"]
+      "courseList": ["History", "Literature"],
+      "teacherId": 2
     },
     {
+      "id": 3,
       "name": "Michael",
       "surname": "Johnson",
       "studentID": "S003",
       "profileImage": "https://example.com/profiles/michael_johnson.jpg",
-      "courseList": ["Biology", "Chemistry"]
+      "courseList": ["Biology", "Chemistry"],
+      "teacherId": 3
     },
     {
+      "id": 4,
       "name": "Emily",
       "surname": "Williams",
       "studentID": "S004",
       "profileImage": "https://example.com/profiles/emily_williams.jpg",
-      "courseList": ["Computer Science", "Mathematics"]
+      "courseList": ["Computer Science", "Mathematics"],
+      "teacherId": 4
     },
     {
+      "id": 5,
       "name": "William",
       "surname": "Brown",
       "studentID": "S005",
       "profileImage": "https://example.com/profiles/william_brown.jpg",
-      "courseList": ["Physics", "Engineering"]
+      "courseList": ["Physics", "Engineering"],
+      "teacherId": 5
     },
     {
+      "id": 6,
       "name": "Olivia",
       "surname": "Jones",
       "studentID": "S006",
       "profileImage": "https://example.com/profiles/olivia_jones.jpg",
-      "courseList": ["Art", "History"]
+      "courseList": ["Art", "History"],
+      "teacherId": 1
     },
     {
+      "id": 7,
       "name": "James",
       "surname": "Garcia",
       "studentID": "S007",
       "profileImage": "https://example.com/profiles/james_garcia.jpg",
-      "courseList": ["Music", "Literature"]
+      "courseList": ["Music", "Literature"],
+      "teacherId": 2
     },
     {
+      "id": 8,
       "name": "Sophia",
       "surname": "Martinez",
       "studentID": "S008",
       "profileImage": "https://example.com/profiles/sophia_martinez.jpg",
-      "courseList": ["Chemistry", "Biology"]
+      "courseList": ["Chemistry", "Biology"],
+      "teacherId": 3
     },
     {
+      "id": 9,
       "name": "Liam",
       "surname": "Lopez",
       "studentID": "S009",
       "profileImage": "https://example.com/profiles/liam_lopez.jpg",
-      "courseList": ["Mathematics", "Computer Science"]
+      "courseList": ["Mathematics", "Computer Science"],
+      "teacherId": 4
     },
     {
+      "id": 10,
       "name": "Emma",
       "surname": "Scott",
       "studentID": "S010",
       "profileImage": "https://example.com/profiles/emma_scott.jpg",
-      "courseList": ["Engineering", "Physics"]
+      "courseList": ["Engineering", "Physics"],
+      "teacherId": 5
     },
     {
+      "id": 11,
       "name": "Noah",
       "surname": "Lee",
       "studentID": "S011",
       "profileImage": "https://example.com/profiles/noah_lee.jpg",
-      "courseList": ["History", "Art"]
+      "courseList": ["History", "Art"],
+      "teacherId": 1
     },
     {
+      "id": 12,
       "name": "Ava",
       "surname": "Turner",
       "studentID": "S012",
       "profileImage": "https://example.com/profiles/ava_turner.jpg",
-      "courseList": ["Literature", "Music"]
+      "courseList": ["Literature", "Music"],
+      "teacherId": 2
     },
     {
+      "id": 13,
       "name": "Ethan",
       "surname": "Harris",
       "studentID": "S013",
       "profileImage": "https://example.com/profiles/ethan_harris.jpg",
-      "courseList": ["Biology", "Chemistry"]
+      "courseList": ["Biology", "Chemistry"],
+      "teacherId": 3
     },
     {
+      "id": 14,
       "name": "Isabella",
       "surname": "Martin",
       "studentID": "S014",
       "profileImage": "https://example.com/profiles/isabella_martin.jpg",
-      "courseList": ["Computer Science", "Mathematics"]
+      "courseList": ["Computer Science", "Mathematics"],
+      "teacherId": 4
     },
     {
+      "id": 15,
       "name": "Mason",
       "surname": "Clark",
       "studentID": "S015",
       "profileImage": "https://example.com/profiles/mason_clark.jpg",
-      "courseList": ["Physics", "Engineering"]
-    },
-    {
-      "name": "Mia",
-      "surname": "Rodriguez",
-      "studentID": "S016",
-      "profileImage": "https://example.com/profiles/mia_rodriguez.jpg",
-      "courseList": ["Art", "History"]
-    },
-    {
-      "name": "Sebastian",
-      "surname": "Anderson",
-      "studentID": "S017",
-      "profileImage": "https://example.com/profiles/sebastian_anderson.jpg",
-      "courseList": ["Music", "Literature"]
-    },
-    {
-      "name": "Lily",
-      "surname": "Walker",
-      "studentID": "S018",
-      "profileImage": "https://example.com/profiles/lily_walker.jpg",
-      "courseList": ["Chemistry", "Biology"]
-    },
-    {
-      "name": "Jackson",
-      "surname": "Perez",
-      "studentID": "S019",
-      "profileImage": "https://example.com/profiles/jackson_perez.jpg",
-      "courseList": ["Mathematics", "Computer Science"]
-    },
-    {
-      "name": "Grace",
-      "surname": "Hall",
-      "studentID": "S020",
-      "profileImage": "https://example.com/profiles/grace_hall.jpg",
-      "courseList": ["Engineering", "Physics"]
-    },
-    {
-      "name": "Aiden",
-      "surname": "Young",
-      "studentID": "S021",
-      "profileImage": "https://example.com/profiles/aiden_young.jpg",
-      "courseList": ["History", "Art"]
-    },
-    {
-      "name": "Zoe",
-      "surname": "Allen",
-      "studentID": "S022",
-      "profileImage": "https://example.com/profiles/zoe_allen.jpg",
-      "courseList": ["Literature", "Music"]
-    },
-    {
-      "name": "Carter",
-      "surname": "Gonzalez",
-      "studentID": "S023",
-      "profileImage": "https://example.com/profiles/carter_gonzalez.jpg",
-      "courseList": ["Biology", "Chemistry"]
-    },
-    {
-      "name": "Charlotte",
-      "surname": "Nelson",
-      "studentID": "S024",
-      "profileImage": "https://example.com/profiles/charlotte_nelson.jpg",
-      "courseList": ["Computer Science", "Mathematics"]
-    },
-    {
-      "name": "Matthew",
-      "surname": "Baker",
-      "studentID": "S025",
-      "profileImage": "https://example.com/profiles/matthew_baker.jpg",
-      "courseList": ["Physics", "Engineering"]
-    },
-    {
-      "name": "Hannah",
-      "surname": "Roberts",
-      "studentID": "S026",
-      "profileImage": "https://example.com/profiles/hannah_roberts.jpg",
-      "courseList": ["Art", "History"]
-    },
-    {
-      "name": "Wyatt",
-      "surname": "Cook",
-      "studentID": "S027",
-      "profileImage": "https://example.com/profiles/wyatt_cook.jpg",
-      "courseList": ["Music", "Literature"]
-    },
-    {
-      "name": "Ella",
-      "surname": "Hernandez",
-      "studentID": "S028",
-      "profileImage": "https://example.com/profiles/ella_hernandez.jpg",
-      "courseList": ["Chemistry", "Biology"]
-    },
-    {
-      "name": "Henry",
-      "surname": "Turner",
-      "studentID": "S029",
-      "profileImage": "https://example.com/profiles/henry_turner.jpg",
-      "courseList": ["Mathematics", "Computer Science"]
-    },
-    {
-      "name": "Avery",
-      "surname": "Cooper",
-      "studentID": "S030",
-      "profileImage": "https://example.com/profiles/avery_cooper.jpg",
-      "courseList": ["Engineering", "Physics"]
+      "courseList": ["Physics", "Engineering"],
+      "teacherId": 5
     }
-  ]
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "surname": "Smith",
+      "profileImage": "https://example.com/profiles/teacher_alice.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "surname": "Johnson",
+      "profileImage": "https://example.com/profiles/teacher_bob.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Carol",
+      "surname": "Williams",
+      "profileImage": "https://example.com/profiles/teacher_carol.jpg"
+    },
+    {
+      "id": 4,
+      "name": "David",
+      "surname": "Brown",
+      "profileImage": "https://example.com/profiles/teacher_david.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Eve",
+      "surname": "Jones",
+      "profileImage": "https://example.com/profiles/teacher_eve.jpg"
+    }
+  ],
+  "patients": [
+    {
+      "id": 1,
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "blood_type": "A+",
+      "vaccinated": true,
+      "recommendation": "Continue with regular check-ups.",
+      "patient_history": "No major health issues in the past.",
+      "hospital": "City General Hospital",
+      "congenital_disease": "None",
+      "vaccine_injections": [
+        {
+          "date": "2022-03-15",
+          "vaccine_name": "Pfizer-BioNTech"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "first_name": "Bob",
+      "last_name": "Smith",
+      "blood_type": "O-",
+      "vaccinated": false,
+      "recommendation": "Please consider getting vaccinated.",
+      "patient_history": "Allergic to penicillin.",
+      "hospital": "Central Medical Center",
+      "congenital_disease": "None",
+      "vaccine_injections": [{
+        "date": "",
+        "vaccine_name": ""
+      }]
+    },
+    {
+      "id": 3,
+      "first_name": "Carol",
+      "last_name": "Williams",
+      "blood_type": "B+",
+      "vaccinated": true,
+      "recommendation": "Maintain a healthy lifestyle for overall well-being.",
+      "patient_history": "Had appendectomy in 2010.",
+      "hospital": "Green Valley Hospital",
+      "congenital_disease": "None",
+      "vaccine_injections": [
+        {
+          "date": "2023-01-20",
+          "vaccine_name": "Moderna"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "first_name": "David",
+      "last_name": "Brown",
+      "blood_type": "AB-",
+      "vaccinated": false,
+      "recommendation": "Schedule a follow-up appointment for further assessment.",
+      "patient_history": "Diagnosed with asthma.",
+      "hospital": "Westside Medical Center",
+      "congenital_disease": "None",
+      "vaccine_injections": [
+        {
+          "date": "",
+          "vaccine_name": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "first_name": "Eve",
+      "last_name": "Jones",
+      "blood_type": "O+",
+      "vaccinated": true,
+      "recommendation": "Continue to stay active and hydrated.",
+      "patient_history": "Fractured right arm in 2018.",
+      "hospital": "Sunshine General Hospital",
+      "congenital_disease": "None",
+      "vaccine_injections": [
+        {
+          "date": "2022-06-10",
+          "vaccine_name": "Johnson & Johnson"
+        }
+      ]
+    }
+  ]  
 }
