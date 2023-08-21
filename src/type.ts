@@ -1,4 +1,5 @@
 export interface StudentItem {
+[x: string]: any
   id: number
   name: string
   surname: string

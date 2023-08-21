@@ -2,6 +2,7 @@ import axios from 'axios'
 import type { AxiosInstance, AxiosResponse } from 'axios'
 import type { StudentItem } from '@/type'
 
+
 const apiClient: AxiosInstance = axios.create({
   baseURL: 'http://localhost:3004',
   withCredentials: false,

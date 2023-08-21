@@ -6,6 +6,9 @@ import StudentService from '@/services/StudentService'
 import type { AxiosResponse } from 'axios'
 import { useRouter } from 'vue-router'
 
+
+
+
 const studentList = ref<Array<StudentItem>>([])
 const totalEvent = ref<number>(0)
 const router = useRouter()
@@ -21,6 +24,7 @@ const props = defineProps({
   }
 })
 
+
 watchEffect(() => {
   StudentService.getStudent(3, props.page)
     .then((response: AxiosResponse<StudentItem[]>) => {
@@ -35,6 +39,7 @@ const hasNextPage = computed(() => {
   const totalPages = Math.ceil(totalEvent.value / 3)
   return props.page.valueOf() < totalPages
 })
+
 </script>
 
 <template>

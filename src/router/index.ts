@@ -10,10 +10,15 @@ import PatientLayout from '@/views/patient/PatientLayoutView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import NetworkErrorView from '@/views/NetworkErrorView.vue'
 import Nprogress from 'nprogress'
+import StudentDetailView from '../views/student/StudentDetailView.vue'
+import StudentLayoutView from '../views/student/StudentLayoutView.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    
+   
     {
       path: '/',
       name: 'home',
@@ -60,6 +65,20 @@ const router = createRouter({
           component: PatientReccomend,
           props: true
         }
+      ]
+    },
+    {
+      path: '/student/:id',
+      name: 'student-layout',
+      component: StudentLayoutView,
+      props: true,
+      children: [
+        {
+          path: '',
+          name: 'student-detail',
+          component: StudentDetailView,
+          props: true
+        },
       ]
     },
     {
