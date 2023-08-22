@@ -14,5 +14,8 @@ const apiClient: AxiosInstance = axios.create({
 export default {
   getEvent(): Promise<AxiosResponse<TeacherItem[]>> {
     return apiClient.get<TeacherItem[]>('/teachers')
+  },
+  getEventbyId(id: number): Promise<AxiosResponse<TeacherItem>> {
+    return apiClient.get<TeacherItem>('teachers/' + id.toString())
   }
 }

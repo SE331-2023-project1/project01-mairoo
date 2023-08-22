@@ -12,7 +12,8 @@ const props = defineProps({
 <template>
     <div class="teacher-class"></div>
     <div class="teacher-card">
-        <span>{{ teacher?.name }}</span>
+        <span>{{ teacher?.name }} {{ teacher?.surname }}</span>
+        <span></span>
     </div>
 </template>
 
