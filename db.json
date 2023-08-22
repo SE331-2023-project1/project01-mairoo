@@ -141,31 +141,31 @@
       "id": 1,
       "name": "Alice",
       "surname": "Smith",
-      "profileImage": "https://example.com/profiles/teacher_alice.jpg"
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFEjyM2s0v1aOPOF3BiLb-Zt4Tdc2BdasVNNvoy2wr&s"
     },
     {
       "id": 2,
       "name": "Bob",
       "surname": "Johnson",
-      "profileImage": "https://example.com/profiles/teacher_bob.jpg"
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFEjyM2s0v1aOPOF3BiLb-Zt4Tdc2BdasVNNvoy2wr&s"
     },
     {
       "id": 3,
       "name": "Carol",
       "surname": "Williams",
-      "profileImage": "https://example.com/profiles/teacher_carol.jpg"
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFEjyM2s0v1aOPOF3BiLb-Zt4Tdc2BdasVNNvoy2wr&s"
     },
     {
       "id": 4,
       "name": "David",
       "surname": "Brown",
-      "profileImage": "https://example.com/profiles/teacher_david.jpg"
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFEjyM2s0v1aOPOF3BiLb-Zt4Tdc2BdasVNNvoy2wr&s"
     },
     {
       "id": 5,
       "name": "Eve",
       "surname": "Jones",
-      "profileImage": "https://example.com/profiles/teacher_eve.jpg"
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFEjyM2s0v1aOPOF3BiLb-Zt4Tdc2BdasVNNvoy2wr&s"
     }
   ],
   "patients": [

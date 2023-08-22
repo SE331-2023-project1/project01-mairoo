@@ -18,10 +18,9 @@ TeacherService.getEventById(Number(props.id)).then((response) => {
 
 <template>
     <div v-if="event">
-        <h1>{{ event.id }}</h1>
-        <h1>{{ event.name }}</h1>
-        <h1>{{ event.surname }}</h1>
-        <h1>{{ event.profileImage }}</h1>
+        <h1>Advisor Profile</h1>
+        <h2>Name: {{ event.name }} {{ event.surname }}</h2>
+        <img :src="event.profileImage" alt="Profile Image">
     </div>
 </template>
   
