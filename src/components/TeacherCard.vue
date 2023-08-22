@@ -10,11 +10,12 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="teacher-class"></div>
-    <div class="teacher-card">
-        <span>{{ teacher?.name }} {{ teacher?.surname }}</span>
-        <span></span>
-    </div>
+    <RouterLink :to="{ name: 'teacher-detail', params: { id: teacher?.id } }">
+        <div class="teacher-class"></div>
+        <div class="teacher-card">
+            <span>{{ teacher?.name }} {{ teacher?.surname }}</span>
+        </div>
+    </RouterLink>
 </template>
 
 

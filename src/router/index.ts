@@ -30,11 +30,11 @@ const router = createRouter({
       path: '/teacher',
       name: 'teacher',
       component: TeacherView,
-      props: true
+      props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
     },
     //just for teacher detail view development
     {
-      path: '/teacher/123',
+      path: '/teacher/:id',
       name: 'teacher-detail',
       component: TeacherDetailView,
       props: true

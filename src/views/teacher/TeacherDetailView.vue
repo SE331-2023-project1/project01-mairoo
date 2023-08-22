@@ -4,10 +4,11 @@ import type { TeacherItem } from '@/type'
 import TeacherService from '@/services/TeacherService';
 
 const event = ref<TeacherItem | null>(null)
-const id: Ref<number> = ref(1)
 
-TeacherService.getEventbyId(id.value)
-.then((response) => {
+const props = defineProps({
+    id: String
+})
+TeacherService.getEventById(Number(props.id)).then((response) => {
     event.value = response.data
 }).catch(error => {
     console.log(error)
@@ -17,10 +18,10 @@ TeacherService.getEventbyId(id.value)
 
 <template>
     <div v-if="event">
-      <h1>{{ event.id }}</h1>
-      <h1>{{ event.name }}</h1>
-      <h1>{{ event.surname }}</h1>
-      <h1>{{ event.profileImage }}</h1>
+        <h1>{{ event.id }}</h1>
+        <h1>{{ event.name }}</h1>
+        <h1>{{ event.surname }}</h1>
+        <h1>{{ event.profileImage }}</h1>
     </div>
-  </template>
+</template>
   
