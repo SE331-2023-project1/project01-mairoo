@@ -43,13 +43,13 @@ const hasNextPage = computed(() => {
     <div class="card bg-blue-200 p-6 rounded-lg shadow-md mb-8 text-black">
       <StudentCard v-for="student in studentList" :key="student.id" :student="student"></StudentCard>
     </div>
-    <div class="flex justify-between">
+    <div class="flex justify-between text-black">
       <RouterLink :to="{ name: 'studentList', query: { page: page - 1 } }" rel="prev" v-if="page != 1"
-        class="text-gray-700 hover:underline">
+        class="text-gray-700 hover:underline text-lg">
         Prev Page
       </RouterLink>
       <RouterLink :to="{ name: 'studentList', query: { page: page + 1 } }" rel="next" v-if="hasNextPage"
-        class="text-gray-700 hover:underline">
+        class="text-gray-700 hover:underline text-lg">
         Next Page
       </RouterLink>
     </div>
@@ -91,7 +91,6 @@ const hasNextPage = computed(() => {
 .hover\:underline:hover {
   text-decoration: underline;
 }
-
 .text-gray-700 {
   color: var(--color-gray-700);
 }

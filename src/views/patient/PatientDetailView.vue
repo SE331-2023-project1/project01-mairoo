@@ -4,6 +4,7 @@ import type { PatientItem, VaccineInjection } from '@/type'
 import PatientService from '@/services/PatientService'
 import { useDetailStore } from '@/stores/detail'
 import { storeToRefs } from 'pinia'
+import '@/assets/style.css'
 
 const store = useDetailStore()
 const { detail } = storeToRefs(store)
@@ -20,12 +21,6 @@ const props = defineProps({
   }
 })
 
-// PatientService.getPatientById(Number(props.id))
-// .then((res) => {
-//     patient.value = res.data
-// }).catch(error => {
-//     console.log(error);
-// })
 </script>
 
 <template>
