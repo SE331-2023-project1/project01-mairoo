@@ -3,6 +3,7 @@ import type { Ref } from 'vue'
 import type { StudentItem } from '@/type'
 import { ref, type PropType } from 'vue'
 import StudentService from '@/services/StudentService'
+import '@/assets/style.css'
 
 defineProps({
   student: {
@@ -21,8 +22,8 @@ defineProps({
     <div v-if="student">
       <p><span class="font-bold">First Name :</span> {{ student?.name }}</p>
       <p><span class="font-bold">Last Name :</span> {{ student?.surname }}</p>
-      <p><span class="font-bold">Student ID :</span> {{ student?.studentID }}</p>
-      <p><span class="font-bold mb-10">Registered Courses :</span> {{ student?.registered }}</p>
+      <p><span class="font-bold">Student ID :</span> {{ student?.StudentID }}</p>
+      
     </div>
   </div>
 

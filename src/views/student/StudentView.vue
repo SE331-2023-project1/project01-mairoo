@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import StudentCard from '../components/StudentCard.vue'
+import StudentCard from '@/components/StudentCard.vue'
 import type { StudentItem } from '@/type'
 import { computed, ref, watchEffect } from 'vue'
 import StudentService from '@/services/StudentService'

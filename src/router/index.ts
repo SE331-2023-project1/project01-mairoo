@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
-import StudentView from '../views/StudentView.vue'
+import StudentView from '../views/student/StudentView.vue'
 import AdminView from '../views/AdminView.vue'
 import DoctorView from '../views/DoctorView.vue'
 import PatientDetail from '@/views/patient/PatientDetailView.vue'
@@ -11,7 +11,7 @@ import NotFoundView from '@/views/NotFoundView.vue'
 import NetworkErrorView from '@/views/NetworkErrorView.vue'
 import Nprogress from 'nprogress'
 import StudentDetailView from '../views/student/StudentDetailView.vue'
-import StudentLayoutView from '../views/student/StudentLayoutView.vue'
+
 
 
 const router = createRouter({
@@ -34,6 +34,12 @@ const router = createRouter({
       name: 'studentList',
       component: StudentView,
       props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
+    },
+    {
+      path: '/student/:id',
+      name: 'student-detail',
+      component: StudentDetailView,
+      props: true
     },
     {
       path: '/admin',
@@ -67,20 +73,7 @@ const router = createRouter({
         }
       ]
     },
-    {
-      path: '/student/:id',
-      name: 'student-layout',
-      component: StudentLayoutView,
-      props: true,
-      children: [
-        {
-          path: '',
-          name: 'student-detail',
-          component: StudentDetailView,
-          props: true
-        },
-      ]
-    },
+    
     {
       path: '/404/:resource',
       name: '404-resource',
