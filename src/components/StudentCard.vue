@@ -1,34 +1,39 @@
-<script setup lang="ts">
-import type { StudentItem } from '@/type'
-import type { PropType } from 'vue'
-
-const prop = defineProps({
-  student: {
-    type: Object as PropType<StudentItem>,
-    require: true
-  }
-})
-</script>
-
 <template>
-  <RouterLink :to="{ name: 'student-detail', params: { id: student?.name } }">
-  <div class="student-class">
-    <div class="student-card">
-      <span>{{ student?.name }} {{ student?.surname }}</span>
-      <h2>
-        student ID:
-        <span>
-          {{ student?.studentID  }}
-        </span>
-      </h2>
-      <h5>
-        Registered Courses:
-        {{ student?.courseList }}
-      </h5>
+  <RouterLink :to="{ name: 'student-detail', params: { id: student.id } }">
+    <div v-if="student" class="StudentDetail-class">
+      <div class="StudentDetail-class
+                  border-2 border-blue-950 w20-h20
+                  rounded-lg
+                  shadow-lg
+                  mt-5 mb-5 w-250px
+                  bg-white pd-10 py-8
+                  text-blue-950 
+                  text-base
+                  font-mono
+                  hover:bg-blue-50 
+                  cursor-pointer
+                  flex flex-col justify-center items-center" >
+          <span class="font-bold text-xl"> {{ `${student.name.toUpperCase()} ${student.surname.toUpperCase()}` }}</span>
+          <hr class="font-bold w-20 mt-4 border-blue-950">
+          <img class="mt-5 w-48 h-48" :src = "student.profileImage" alt="img">
+      </div>
     </div>
-  </div>
   </RouterLink>
 </template>
+  
+<script setup lang="ts">
+  import { ref, type PropType } from 'vue'
+  import {type StudentItem } from '@/type';
+  
+  
+  const props = defineProps({
+    student:{
+      type: Object as PropType<StudentItem>,
+      required:true
+    }
+  })
+</script>
+  
 
 <style scoped>
 .student-card {
