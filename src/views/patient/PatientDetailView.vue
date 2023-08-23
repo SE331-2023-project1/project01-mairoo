@@ -20,7 +20,6 @@ const props = defineProps({
     require: true
   }
 })
-
 </script>
 
 <template>
@@ -31,11 +30,14 @@ const props = defineProps({
     </h1>
     <p class="patient-hospital text-lg text-gray-800">
       Hospital: {{ patient.hospital }}
-      <span class="congenital-disease text-gray-600">Congenital disease: {{ patient.congenital_disease }}</span>
+      <span class="congenital-disease text-gray-600"
+        >Congenital disease: {{ patient.congenital_disease }}</span
+      >
     </p>
     <p class="vaccinated text-gray-700">Vaccine: {{ patient.vaccinated }}</p>
     <p class="vaccine-injection text-gray-700">
-      Vaccine injection: {{ patient.vaccine_injections[0]?.vaccine_name }} {{ patient.vaccine_injections[0].date }}
+      Vaccine injection: {{ patient.vaccine_injections[0]?.vaccine_name }}
+      {{ patient.vaccine_injections[0].date }}
     </p>
     <p class="patient-history text-gray-700">History: {{ patient?.patient_history }}</p>
     <p class="recommendation text-gray-700">Recommend from doctor: {{ patient?.recommendation }}</p>
@@ -84,4 +86,5 @@ const props = defineProps({
 
 .page-break {
   page-break-after: always;
-}</style>
+}
+</style>

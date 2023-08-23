@@ -2,11 +2,10 @@
 import PatientCard from '@/components/PatientCard.vue'
 import PatientService from '@/services/PatientService'
 import { computed, ref, watchEffect } from 'vue'
-import { useRouter, RouterLink } from 'vue-router'
+import { useRouter} from 'vue-router'
 import type { PatientItem } from '@/type'
 import type { AxiosResponse } from 'axios'
 import '../assets/style.css'
-
 
 const patientList = ref<Array<PatientItem>>([])
 const totalEvent = ref<number>(0)
@@ -32,11 +31,6 @@ watchEffect(() => {
     .catch(() => {
       router.push({ name: 'NetworkError' })
     })
-})
-
-const hasNextPage = computed(() => {
-  const totalPages = Math.ceil(totalEvent.value / props.limit)
-  return props.page.valueOf() < totalPages
 })
 
 const vaccinatedPatients = computed(() => {
@@ -113,4 +107,3 @@ const notVaccinatedPatients = computed(() => {
   color: var(--color-gray-800);
 }
 </style>
-

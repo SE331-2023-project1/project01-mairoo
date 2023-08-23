@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import StudentCard from '../components/StudentCard.vue'
 import type { StudentItem } from '@/type'
-import { computed, ref, watchEffect, type Ref } from 'vue'
+import { ref, watchEffect, type Ref } from 'vue'
 import StudentService from '@/services/StudentService'
 import type { AxiosResponse } from 'axios'
 import { useRouter } from 'vue-router'
 import type { TeacherItem } from '@/type'
-import TeacherCard from '@/components/TeacherCard.vue';
+import TeacherCard from '@/components/TeacherCard.vue'
 import '../assets/style.css'
 import TeacherService from '@/services/TeacherService'
-
 
 const studentList = ref<Array<StudentItem>>([])
 const totalEvent = ref<number>(0)
@@ -36,17 +35,11 @@ watchEffect(() => {
       router.push({ name: 'NetworkError' })
     })
 })
-const hasNextPage = computed(() => {
-  const totalPages = Math.ceil(totalEvent.value / 3)
-  return props.page.valueOf() < totalPages
+
+TeacherService.getEvent().then((response) => {
+  events.value = response.data
 })
-
-TeacherService.getEvent()
-  .then((response) => {
-    events.value = response.data
-  })
 const events: Ref<Array<TeacherItem>> = ref([])
-
 </script>
 <template>
   <div class="flex h-screen">
@@ -58,7 +51,8 @@ const events: Ref<Array<TeacherItem>> = ref([])
           <StudentCard v-for="student in studentList" :key="student.id" :student="student" />
         </div>
 
-        <div class="mt-6 text-black"> <!-- Adjusted text color -->
+        <div class="mt-6 text-black">
+          <!-- Adjusted text color -->
           <h4 class="text-lg font-semibold">Total Students: {{ totalEvent }}</h4>
         </div>
       </div>

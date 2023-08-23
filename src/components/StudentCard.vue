@@ -2,7 +2,6 @@
 import type { StudentItem } from '@/type'
 import type { PropType } from 'vue'
 
-
 const prop = defineProps({
   student: {
     type: Object as PropType<StudentItem>,
@@ -13,22 +12,23 @@ const prop = defineProps({
 
 <template>
   <RouterLink :to="{ name: 'student-detail', params: { id: student?.id } }">
-  <div class="student-class">
-    <div class="student-card">
-      <span>{{ student?.name }} {{ student?.surname }}</span>
-      
-      <h2>
-        student ID:
-        <span>
-          {{ student?.studentID  }}
-        </span>
-      </h2>
-      <h5>
-        Registered Courses:
-        {{ student?.courseList }}
-      </h5>
+    <div class="student-class">
+      <div class="student-card">
+        <span>{{ student?.name }} {{ student?.surname }}</span>
+
+        <h2>
+          student ID:
+          <span>
+            {{ student?.studentID }}
+          </span>
+        </h2>
+        <h5>
+          Registered Courses:
+          {{ student?.courseList[0] }}
+          {{ student?.courseList[1] }}
+        </h5>
+      </div>
     </div>
-  </div>
   </RouterLink>
 </template>
 
