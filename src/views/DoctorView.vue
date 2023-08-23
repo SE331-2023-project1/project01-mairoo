@@ -49,8 +49,8 @@ const notVaccinatedPatients = computed(() => {
 </script>
 
 <template>
-  <div class="Doctor-dashboard bg-gradient-to-r from-blue-400 to-purple-600 h-screen p-8 text-black">
-    <div class="vaccinated-section bg-blue-200 p-6 rounded-lg shadow-md mr-8">
+  <div class="Doctor-dashboard h-screen p-8 text-black">
+    <div class="vaccinated-section">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Vaccinated Patients</h2>
       <div class="card">
         <PatientCard
@@ -61,7 +61,7 @@ const notVaccinatedPatients = computed(() => {
       </div>
     </div>
 
-    <div class="not-vaccinated-section bg-blue-200 p-6 rounded-lg shadow-md text-black">
+    <div class="not-vaccinated-section text-black">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Not Vaccinated Patients</h2>
       <div class="card">
         <PatientCard

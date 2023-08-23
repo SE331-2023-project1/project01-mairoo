@@ -3,20 +3,22 @@ import '../assets/style.css'
 </script>
 
 <template>
-  <div class="flex h-screen bg-gradient-to-r from-blue-400 to-purple-600">
-    <!-- ADMIN Side -->
-    <div class="admin-side flex items-center justify-center w-1/2 p-10">
-      <div class="bg-white p-6 rounded-lg shadow-md text-center">
-        <h1 class="text-4xl font-semibold text-blue-800 mb-4">ADMIN</h1>
-        <RouterLink to="/admin" class="text-blue-500 hover:underline">HERE!!</RouterLink>
+  <div class="flex flex-col h-screen justify-center items-center">
+    <h1 class="text-6xl font-semibold text-red-700 mb-4">Student Management System</h1>
+
+    <div class="flex">
+      <!-- ADMIN Side -->
+      <div class="admin-side flex items-center justify-center w-1/2 p-10">
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <RouterLink to="/admin" class="text-4xl font-semibold text-blue-800 mb-4">Admin</RouterLink>
+        </div>
       </div>
-    </div>
-    
-    <!-- DOCTOR Side -->
-    <div class="doctor-side flex items-center justify-center w-1/2 p-10">
-      <div class="bg-white p-6 rounded-lg shadow-md text-center">
-        <h1 class="text-4xl font-semibold text-green-800 mb-4">DOCTOR</h1>
-        <RouterLink to="/doctor" class="text-green-500 hover:underline">HERE!!</RouterLink>
+
+      <!-- DOCTOR Side -->
+      <div class="doctor-side flex items-center justify-center w-1/2 p-10">
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+          <RouterLink to="/doctor" class="text-4xl font-semibold text-green-800 mb-4">Doctor</RouterLink>
+        </div>
       </div>
     </div>
   </div>

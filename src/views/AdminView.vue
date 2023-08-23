@@ -49,10 +49,10 @@ const events: Ref<Array<TeacherItem>> = ref([])
 
 </script>
 <template>
-  <div class="flex h-screen bg-gradient-to-r from-blue-400 to-purple-600">
+  <div class="flex h-screen">
     <!-- Student List -->
     <div class="StudentList admin-side flex items-center justify-center w-1/2 p-10">
-      <div class="bg-blue-200 p-6 rounded-lg shadow-md">
+      <div class="p-6 rounded-lg shadow-md">
         <h2 class="text-2xl font-semibold text-gray-800 mb-4">Student List</h2>
         <div class="grid grid-cols-1 gap-4 text-black">
           <StudentCard v-for="student in studentList" :key="student.id" :student="student" />
@@ -66,7 +66,7 @@ const events: Ref<Array<TeacherItem>> = ref([])
 
     <!-- Adviser View -->
     <div class="AdviserView doctor-side flex items-center justify-center w-1/2 p-10">
-      <div class="bg-green-200 p-6 rounded-lg shadow-md">
+      <div class="p-6 rounded-lg shadow-md">
         <h2 class="text-2xl font-semibold mb-4 text-black">Adviser View</h2>
         <div class="grid grid-cols-1 gap-4 text-black">
           <TeacherCard v-for="teacher in events" :key="teacher.id" :teacher="teacher" />

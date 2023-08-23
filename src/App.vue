@@ -43,15 +43,6 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 
-@keyframes yellowfade {
-  from {
-    background: yellow;
-  }
-  to {
-    background: transparent;
-  }
-}
-
 #flash {
   animation: yellowfade 3s ease-in-out;
 }
