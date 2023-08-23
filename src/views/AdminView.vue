@@ -36,7 +36,7 @@ watchEffect(() => {
     })
 })
 
-TeacherService.getEvent().then((response) => {
+TeacherService.getEvent(0 , props.page).then((response) => {
   events.value = response.data
 })
 const events: Ref<Array<TeacherItem>> = ref([])
