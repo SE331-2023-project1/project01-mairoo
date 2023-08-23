@@ -5,6 +5,7 @@ import { computed, ref, watchEffect } from 'vue'
 import StudentService from '@/services/StudentService'
 import type { AxiosResponse } from 'axios'
 import { useRouter } from 'vue-router'
+import '../assets/style.css'
 
 const studentList = ref<Array<StudentItem>>([])
 const totalEvent = ref<number>(0)
@@ -38,44 +39,62 @@ const hasNextPage = computed(() => {
 </script>
 
 <template>
-  <div>
-    <div class="card">
-      <StudentCard
-        v-for="student in studentList"
-        :key="student.id"
-        :student="student"
-      ></StudentCard>
+  <div class="bg-gradient-to-r from-blue-400 to-purple-600 h-screen p-8">
+    <div class="card text-black">
+      <StudentCard v-for="student in studentList" :key="student.id" :student="student"></StudentCard>
     </div>
-    <RouterLink
-      :to="{ name: 'studentList', query: { page: page - 1 } }"
-      rel="prev"
-      v-if="page != 1"
-      class="text-left text-gray-700 no-underline"
-    >
-      Prev Page
-    </RouterLink>
-    <RouterLink
-      :to="{ name: 'studentList', query: { page: page + 1 } }"
-      rel="next"
-      v-if="hasNextPage"
-      class="text-right text-gray-700 no-underline"
-    >
-      Next Page
-    </RouterLink>
+    <div class="flex justify-between text-black">
+      <RouterLink :to="{ name: 'studentList', query: { page: page - 1 } }" rel="prev" v-if="page != 1"
+        class="border border-gray-300 rounded-lg p-2 px-4 text-gray-700 hover:bg-gray-100 hover:underline text-lg">
+        Prev Page
+      </RouterLink>
+      <RouterLink :to="{ name: 'studentList', query: { page: page + 1 } }" rel="next" v-if="hasNextPage"
+        class="border border-gray-300 rounded-lg p-2 px-4 text-gray-700 hover:bg-gray-100 hover:underline text-lg">
+        Next Page
+      </RouterLink>
+
+    </div>
   </div>
 </template>
 
 <style scoped>
-body {
-  margin-top: 50%;
-  display: flex;
-  flex-direction: column;
+/* Additional styling specific to this template */
+.card {
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
 }
 
-.card {
+/* General styling */
+.bg-gradient-to-r {
+  background: linear-gradient(to right, var(--color-blue-400), var(--color-purple-600));
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.flex {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+.text-gray-700 {
+  color: var(--color-gray-700);
 }
 </style>
+

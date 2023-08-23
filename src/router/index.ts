@@ -9,6 +9,8 @@ import PatientReccomend from '@/views/patient/PatientRecommendView.vue'
 import PatientLayout from '@/views/patient/PatientLayoutView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import NetworkErrorView from '@/views/NetworkErrorView.vue'
+import TeacherView from '../views/teacher/TeacherView.vue'
+import TeacherDetailView from '../views/teacher/TeacherDetailView.vue'
 import Nprogress from 'nprogress'
 
 const router = createRouter({
@@ -23,6 +25,19 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: AboutView
+    },
+    {
+      path: '/teacher',
+      name: 'teacher',
+      component: TeacherView,
+      props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
+    },
+    //just for teacher detail view development
+    {
+      path: '/teacher/:id',
+      name: 'teacher-detail',
+      component: TeacherDetailView,
+      props: true
     },
     {
       path: '/student',

@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import StudentCard from '../components/StudentCard.vue'
 import type { StudentItem } from '@/type'
-import { computed, ref, watchEffect } from 'vue'
+import { computed, ref, watchEffect, type Ref } from 'vue'
 import StudentService from '@/services/StudentService'
 import type { AxiosResponse } from 'axios'
 import { useRouter } from 'vue-router'
+import type { TeacherItem } from '@/type'
+import TeacherCard from '@/components/TeacherCard.vue';
+import '../assets/style.css'
+import TeacherService from '@/services/TeacherService'
+
 
 const studentList = ref<Array<StudentItem>>([])
 const totalEvent = ref<number>(0)
@@ -35,67 +40,57 @@ const hasNextPage = computed(() => {
   const totalPages = Math.ceil(totalEvent.value / 3)
   return props.page.valueOf() < totalPages
 })
+
+TeacherService.getEvent()
+  .then((response) => {
+    events.value = response.data
+  })
+const events: Ref<Array<TeacherItem>> = ref([])
+
 </script>
-
 <template>
-  <div class="main">
-    <div class="StudentList">
-      <div class="StudentList-navbar">
-        <RouterLink to="">Add data student</RouterLink>
-        <RouterLink to="/student"> View all>>>> </RouterLink>
-      </div>
-      <div class="events">
-        <StudentCard
-          v-for="student in studentList"
-          :key="student.id"
-          :student="student"
-        ></StudentCard>
-      </div>
+  <div class="flex h-screen">
+    <!-- Student List -->
+    <div class="StudentList admin-side flex items-center justify-center w-1/2 p-10">
+      <div class="p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Student List</h2>
+        <div class="grid grid-cols-1 gap-4 text-black">
+          <StudentCard v-for="student in studentList" :key="student.id" :student="student" />
+        </div>
 
-      <div>
-        <!-- <RouterLink
-          :to="{ name: 'AdminDashboard', query: { page: page - 1 } }"
-          rel="prev"
-          v-if="page != 1"
-          class="text-left text-gray-700 no-underline"
-        >
-        Prev Page
-        </RouterLink>
-        <RouterLink
-          :to="{ name: 'AdminDashboard', query: { page: page + 1 } }"
-          rel="next"
-          v-if="hasNextPage"
-          class="text-right text-gray-700 no-underline"
-        >
-          Next Page
-        </RouterLink> -->
-
-        <h4>We have {{ totalEvent }} students now</h4>
+        <div class="mt-6 text-black"> <!-- Adjusted text color -->
+          <h4 class="text-lg font-semibold">Total Students: {{ totalEvent }}</h4>
+        </div>
       </div>
     </div>
-    <div class="AdviserView">
-      <h1>It should be show AdviserView here</h1>
+
+    <!-- Adviser View -->
+    <div class="AdviserView doctor-side flex items-center justify-center w-1/2 p-10">
+      <div class="p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-4 text-black">Adviser View</h2>
+        <div class="grid grid-cols-1 gap-4 text-black">
+          <TeacherCard v-for="teacher in events" :key="teacher.id" :teacher="teacher" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.main {
-  display: flex;
-  flex-direction: row;
-}
-.events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: auto;
+/* Additional styling specific to this template */
+.StudentList {
+  background-color: var(--color-blue-200);
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
 }
 
-.AdviserView {
-  margin-left: 50%;
+.admin-side {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
 }
 
-.StudentList-navbar a {
-  margin-right: 20px;
+.doctor-side {
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
 }
 </style>
