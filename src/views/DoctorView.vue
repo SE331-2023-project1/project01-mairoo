@@ -2,9 +2,10 @@
 import PatientCard from '@/components/PatientCard.vue'
 import PatientService from '@/services/PatientService'
 import { computed, ref, watchEffect } from 'vue'
-import { useRouter, RouterLink } from 'vue-router'
+import { useRouter} from 'vue-router'
 import type { PatientItem } from '@/type'
 import type { AxiosResponse } from 'axios'
+import '../assets/style.css'
 
 const patientList = ref<Array<PatientItem>>([])
 const totalEvent = ref<number>(0)
@@ -32,11 +33,6 @@ watchEffect(() => {
     })
 })
 
-const hasNextPage = computed(() => {
-  const totalPages = Math.ceil(totalEvent.value / props.limit)
-  return props.page.valueOf() < totalPages
-})
-
 const vaccinatedPatients = computed(() => {
   return patientList.value.filter((patient) => patient.vaccinated)
 })
@@ -47,9 +43,9 @@ const notVaccinatedPatients = computed(() => {
 </script>
 
 <template>
-  <div class="Doctor-dashboard">
+  <div class="Doctor-dashboard h-screen p-8 text-black">
     <div class="vaccinated-section">
-      <h2>Vaccinated Patients</h2>
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Vaccinated Patients</h2>
       <div class="card">
         <PatientCard
           v-for="patient in vaccinatedPatients"
@@ -59,8 +55,8 @@ const notVaccinatedPatients = computed(() => {
       </div>
     </div>
 
-    <div class="not-vaccinated-section">
-      <h2>Not Vaccinated Patients</h2>
+    <div class="not-vaccinated-section text-black">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Not Vaccinated Patients</h2>
       <div class="card">
         <PatientCard
           v-for="patient in notVaccinatedPatients"
@@ -69,34 +65,45 @@ const notVaccinatedPatients = computed(() => {
         ></PatientCard>
       </div>
     </div>
-
-    <!-- <RouterLink
-      :to="{ name: 'DoctorDashboard', query: { page: props.page - 1 } }"
-      rel="prev"
-      v-if="props.page !== 1"
-      class="text-left text-gray-700 no-underline"
-    >
-      Prev Page
-    </RouterLink>
-    <RouterLink
-      :to="{ name: 'DoctorDashboard', query: { page: props.page + 1 } }"
-      rel="next"
-      v-if="hasNextPage"
-      class="text-right text-gray-700 no-underline"
-    >
-      Next Page
-    </RouterLink> -->
   </div>
 </template>
 
 <style scoped>
-.Doctor-dashboard {
-  display: flex;
-  flex-direction: row;
-  padding-right: 20px;
+/* Additional styling specific to this template */
+.card {
+  border-radius: 0.75rem;
 }
 
 .vaccinated-section {
-  margin-right: 250px;
+  margin-right: 2rem;
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, var(--color-blue-400), var(--color-purple-600));
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* General styling */
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-gray-800 {
+  color: var(--color-gray-800);
 }
 </style>

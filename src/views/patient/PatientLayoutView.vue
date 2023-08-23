@@ -29,9 +29,9 @@ PatientService.getPatientById(Number(props.id))
     <RouterView :patient="patient"></RouterView>
 
     <div id="nav">
-      <RouterLink :to="{ name: 'DoctorDashboard' }"> Dashboard </RouterLink>
-      <RouterLink :to="{ name: 'patient-detail', params: { id } }"> Details </RouterLink>
-      <RouterLink :to="{ name: 'patient-recommend', params: { id } }">
+      <RouterLink class="text-black" :to="{ name: 'DoctorDashboard' }"> Dashboard </RouterLink>
+      <RouterLink class="text-black" :to="{ name: 'patient-detail', params: { id } }"> Details </RouterLink>
+      <RouterLink class="text-black" :to="{ name: 'patient-recommend', params: { id } }">
         Recommend to patient
       </RouterLink>
     </div>

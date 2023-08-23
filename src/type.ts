@@ -1,10 +1,12 @@
 export interface StudentItem {
+  [x: string]: any
   id: number
   name: string
   surname: string
   studentID: string
   profileImage: string
   courseList: string
+  teacherId: number
 }
 
 export interface VaccineInjection {
@@ -23,4 +25,11 @@ export interface PatientItem {
   hospital: string
   congenital_disease: string
   vaccine_injections: VaccineInjection[]
+}
+
+export interface TeacherItem {
+  id: number
+  name: string
+  surname: string
+  profileImage: string
 }
