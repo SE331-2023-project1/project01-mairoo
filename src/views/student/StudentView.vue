@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import StudentCard from '../components/StudentCard.vue'
+import StudentCard from '@/components/StudentCard.vue'
 import type { StudentItem } from '@/type'
 import { computed, ref, watchEffect } from 'vue'
 import StudentService from '@/services/StudentService'
 import type { AxiosResponse } from 'axios'
 import { useRouter } from 'vue-router'
 import '../assets/style.css'
+
+
+
 
 const studentList = ref<Array<StudentItem>>([])
 const totalEvent = ref<number>(0)
@@ -22,6 +25,7 @@ const props = defineProps({
   }
 })
 
+
 watchEffect(() => {
   StudentService.getStudent(3, props.page)
     .then((response: AxiosResponse<StudentItem[]>) => {
@@ -36,6 +40,7 @@ const hasNextPage = computed(() => {
   const totalPages = Math.ceil(totalEvent.value / 3)
   return props.page.valueOf() < totalPages
 })
+
 </script>
 
 <template>

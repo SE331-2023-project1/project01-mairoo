@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
-import StudentView from '../views/StudentView.vue'
+import StudentView from '../views/student/StudentView.vue'
 import AdminView from '../views/AdminView.vue'
 import DoctorView from '../views/DoctorView.vue'
 import PatientDetail from '@/views/patient/PatientDetailView.vue'
@@ -12,10 +12,15 @@ import NetworkErrorView from '@/views/NetworkErrorView.vue'
 import TeacherView from '../views/teacher/TeacherView.vue'
 import TeacherDetailView from '../views/teacher/TeacherDetailView.vue'
 import Nprogress from 'nprogress'
+import StudentDetailView from '../views/student/StudentDetailView.vue'
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    
+   
     {
       path: '/',
       name: 'home',
@@ -44,6 +49,12 @@ const router = createRouter({
       name: 'studentList',
       component: StudentView,
       props: (route) => ({ page: parseInt((route.query?.page as string) || '1') })
+    },
+    {
+      path: '/student/:id',
+      name: 'student-detail',
+      component: StudentDetailView,
+      props: true
     },
     {
       path: '/admin',
@@ -77,6 +88,7 @@ const router = createRouter({
         }
       ]
     },
+    
     {
       path: '/404/:resource',
       name: '404-resource',
